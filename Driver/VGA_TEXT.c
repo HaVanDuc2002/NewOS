@@ -84,3 +84,9 @@ void clear_screen(unsigned char color) {
     }
     set_cursor(get_offset(0, 0));
 }
+
+void print_backspace() {
+    int newCursor = get_cursor() - 2;
+    set_char_at_video_memory(' ', newCursor,BAR_COLOR);
+    set_cursor(newCursor);
+}
